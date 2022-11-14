@@ -7,6 +7,32 @@
     <title>hw9-1</title>
   </head>
   <body>
-    <script></script>
+    <script>
+      function check() {
+        let arrayLength = +prompt("please enter the length of array:", "5");
+        let data = [];
+        let flag;
+        for (let i = 0; i < arrayLength; i++) {
+          let temp = +prompt("please enter item of array:");
+          data.push(temp);
+        }
+        for (let i = 0; i < arrayLength; i++) {
+          if (data.at(-i - 1) === data.at(i)) {
+            flag = true;
+          } else {
+            flag = false;
+          }
+          if (flag === false) {
+            break;
+          }
+        }
+        return flag;
+      }
+      if (check()) {
+        alert("آرایه مقلوب است");
+      } else {
+        alert("آرایه مقلوب نیست");
+      }
+    </script>
   </body>
 </html>
