@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hw9-8</title>
+  </head>
+  <body>
+    <script>
+      function formatDate(date) {
+        let result = "";
+        if (new Date() - date < 1 * 1000) {
+          result = "right now";
+        } else if (
+          new Date() - date < 60 * 1000 &&
+          new Date() - date >= 1 * 1000
+        ) {
+          result = `${Math.floor((new Date() - date) / 1000)} sec ago`;
+        } else if (
+          new Date() - date >= 60 * 1000 &&
+          new Date() - date < 60 * 60 * 1000
+        ) {
+          result = `${Math.floor((new Date() - date) / (60 * 1000))} mins ago`;
+        } else if (new Date() - date >= 60 * 60 * 1000) {
+          result = `${date.getDate()}.${date.getMonth()}.${
+            date.getYear() - 100
+          } ${date.getHours()}:${date.getMinutes()}`;
+        }
+        return result;
+      }
+
+      alert(formatDate(new Date(new Date() - 1)));
+      alert(formatDate(new Date(new Date() - 30 * 1000)));
+      alert(formatDate(new Date(new Date() - 5 * 60 * 1000)));
+      alert(formatDate(new Date(new Date() - 86400 * 1000)));
+    </script>
+  </body>
+</html>
