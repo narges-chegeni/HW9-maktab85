@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hw9-6</title>
+  </head>
+  <body>
+    <script>
+      let john = { name: "john", age: 25 };
+      let pete = { name: "pete", age: 30 };
+      let mary = { name: "mary", age: 29 };
+
+      let arr = [john, pete, mary];
+
+      function getAverageAge(arr) {
+        let result = 0;
+        arr.forEach((element) => {
+          result += element.age;
+        });
+        result = result / arr.length;
+
+        return result;
+      }
+      alert(getAverageAge(arr));
+    </script>
+  </body>
+</html>
